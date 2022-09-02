@@ -1,0 +1,14 @@
+version: "3"
+services:
+  libpython-test:
+    container_name: libpython-test-container
+    image: libpython-test-image
+    build:
+      context: .
+    environment:
+      NREPL_PORT: 9876
+      CHOKIDAR_USEPOLLING: "true"
+    ports:
+      - 9876:9876
+    volumes:
+      - ".:/app"
