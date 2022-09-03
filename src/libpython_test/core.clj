@@ -13,15 +13,6 @@
             [libpython-clj2.require :refer [require-python import-python]]))
 
 
-;; Require python libraries
-
-
-;; naming & api questions
-;; * filter by topic vs select by topic? when do we use select vs filter?
-;; * filter-by-topic takes comments ds; when do we take the whole conv vs not, and how does this interact with naming? ^
-;; * what order should filter etc take? match the functions in ds & clojure core?
-
-
 (println "Establishing python link")
 (py/initialize!)
 (import-python)
