@@ -1,4 +1,4 @@
-FROM clojure:openjdk-17-tools-deps
+FROM clojure:openjdk-8-tools-deps
 
 EXPOSE 9876
 
