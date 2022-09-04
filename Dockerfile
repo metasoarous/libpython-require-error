@@ -1,4 +1,4 @@
-FROM clojure:openjdk-8-tools-deps
+FROM clojure:openjdk-17-tools-deps
 
 EXPOSE 9876
 
@@ -24,6 +24,6 @@ RUN clojure -e "(clojure.core/println :deps-downloaded)"
 
 
 # Systems go
-CMD clojure -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]" --port 9876
+CMD clojure -A:jdk-17 -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]" --port 9876
 
 
