@@ -1,4 +1,4 @@
 run:
-	clj -m libpython-test.test
+	./run.sh
 
 FORCE:

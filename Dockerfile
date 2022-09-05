@@ -55,10 +55,11 @@ COPY . .
 # Make sure deps are pre-installed
 RUN clojure -e "(clojure.core/println :deps-downloaded)" ||  clojure -e "(clojure.core/println :deps-downloaded)" || clojure -e "(clojure.core/println :deps-downloaded)" || clojure -e "(clojure.core/println :deps-downloaded)" || clojure -e "(clojure.core/println :deps-downloaded)"
 
-
-# Systems go
-
-# CMD clojure -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]" --port 9876
+# install Java 17
+RUN apt install -y -qq libc6-x32 libc6-i386 libasound2 git
+RUN wget -q https://download.oracle.com/java/17/latest/jdk-17_linux-x64_bin.deb
+RUN dpkg -i jdk-17_linux-x64_bin.deb
+RUN git clone https://github.com/jenv/jenv.git ~/.jenv
 
 CMD make run
 
